@@ -7,6 +7,8 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 
+require 'pry'
+
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
 
