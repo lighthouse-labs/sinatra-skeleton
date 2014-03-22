@@ -1,0 +1,8 @@
+.env
+.bundle
+/db/*.db
+/db/*.sqlite3
+/db/*.sqlite
+/db/*.sqlite3-journal
+.DS_Store
+public/assets
