@@ -1,0 +1,1 @@
+class Review < ActiveRecord::Base
