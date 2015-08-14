@@ -1,1 +1,0 @@
-class Movie < ActiveRecord::Base
