@@ -9,9 +9,9 @@ class CreateTables < ActiveRecord::Migration
     end
 
     create_table :movies do |t|
-      t.string :name
-      t.string :year_released
-      t.integer :parent_rating
+      t.string :title
+      t.integer :year_released
+      t.string :parent_rating
       t.string :studio
       t.timestamps
     end

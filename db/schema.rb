@@ -14,9 +14,9 @@
 ActiveRecord::Schema.define(version: 2) do
 
   create_table "movies", force: :cascade do |t|
-    t.string   "name"
-    t.string   "year_released"
-    t.integer  "parent_rating"
+    t.string   "title"
+    t.integer  "year_released"
+    t.string   "parent_rating"
     t.string   "studio"
     t.datetime "created_at"
     t.datetime "updated_at"
