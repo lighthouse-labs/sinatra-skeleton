@@ -18,7 +18,19 @@
 
   <title>IMDB Clone YEAH</title>
 </head>
+<nav class="navbar navbar-default">
+  <% if current_user %>
+    <h4>Hello, <%= current_user.username if current_user %></h4>
+    <a href="/logout">Logout</a>
+  <% else %>
+    <a href="/signup">Sign up</a>
+    <a href="/login">Login</a>
+  <% end %>
+</nav>
 <body>
   <%= yield %>
 </body>
+<footer>
+  
+</footer>
 </html>

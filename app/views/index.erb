@@ -1,1 +1,27 @@
+<h1><%= current_user.username %></h1>
 <h1>Home Page</h1>
+
+<form action="/movies/new" method="POST">
+  <div>
+    <label>Title</label>
+    <input type="text" name="title"/>
+  </div>
+  <div>
+    <label>Image</label>
+    <input type="text" name="poster_url" />
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<ul>
+<% @movies.each do |movie| %>
+  <a href="/movies/<%= movie.id %>">
+    <li class="movie-container">
+      <h5><%= movie.title %></h5>
+      <p><%= movie.year_released %></p>
+      <a href="/movies/delete/<%= movie.id %>"><button> delete <%= movie.title %></button></a>
+    </li>
+  </a>
+<% end %>
+</ul>
+
