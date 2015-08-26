@@ -1,0 +1,13 @@
+<h1>Welcome to <%= @user.name %>'s tweets page</h1>
+<a href="/users/<%= @user.id %>/tweets/new">Create a new tweet</a>
+
+<h2>Here is a list of all my tweets</h2>
+
+<table class="table-striped">
+  <th>content</th>
+  <% @user.tweets.reverse.each do |tweet| %>
+    <tr>
+      <td><%= tweet.content %></td>
+    </tr>
+  <% end %>
+</table>

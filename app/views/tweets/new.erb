@@ -1,0 +1,8 @@
+<h1><%= @user.name %>, please create a new tweet</h1>
+
+<form method="POST" action="/users/<%= @user.id %>/tweets/new">
+  <label for="content">Tweet Content:</label>
+  <textarea id="content" name="content"></textarea>
+
+  <input type="submit" value="create new tweet" />
+</form>
