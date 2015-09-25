@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 1) do
+ActiveRecord::Schema.define(version: 2) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "author"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 1) do
     t.integer  "rating"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pin_id"
+    t.integer  "user_id"
   end
 
   create_table "pins", force: :cascade do |t|
