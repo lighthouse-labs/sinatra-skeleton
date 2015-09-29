@@ -4,11 +4,7 @@ class AddForeignKeys < ActiveRecord::Migration
             t.references :user
             #a user has pins
         end
-    end
-end
 
-class AddForeignKeys < ActiveRecord::Migration
-    def change
         change_table :comments do |t|
             t.references :pin
             t.references :user
@@ -16,6 +12,5 @@ class AddForeignKeys < ActiveRecord::Migration
         end
     end
 end
-
 
 
