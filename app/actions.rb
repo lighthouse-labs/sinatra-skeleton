@@ -10,7 +10,7 @@ get '/login' do
 end
 
 post '/login'do
-  redirect '/'
+  redirect '/profile'
 end
 
 
