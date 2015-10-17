@@ -4,48 +4,30 @@
 <!-- Log in form -->
 
         
-      <form action="/login" class="form-horizontal" method="post">
-
+      <form action="/login" method="post">
         <!-- <fieldset> To make a border around form with title in it -->
-      
+          <h3>Login Form</h3> <!--to make this line up add div class form-group-->
           <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <h3>Login Form</h3> <!--to make this line up add div class form-group-->
-            </div>
+            <input type="email" name="login_email" class="form-control" id="login_email" placeholder="Email"/>
           </div>
 
           <div class="form-group">
-            <label for="login_email" class="col-md-2 control-label"> <!-- <span class="glyphicon glyphicon-user" aria-hidden="true"></span> to add a user symbol--> </label>
-            <div class="col-md-2">
-              <input type="email" name="login_email" class="form-control" id="login_email" placeholder="Email"/>
-            </div>
+            <input type="password" name="login_password" class="form-control" id="login_password" placeholder="Password"/>
+          </div>
+
+          <div class="form-group" "checkbox">
+            <input type="checkbox" id="remember_me"/>
+            <label>Remember me</label>
           </div>
 
           <div class="form-group">
-            <label for="login_password" class="col-md-2 control-label"> <!-- <span class="glyphicon glyphicon-lock" aria-hidden="true"></span> --> </label>
-            <div class="col-md-2">
-              <input type="password" name="login_password" class="form-control" id="login_password" placeholder="Password"/>
-            </div>
+            <button type="submit" class="btn btn-info"> Log In</button><br><br>
+              <span>
+                <a href="#">Need Help?</a>
+              </span>
+            </br></br>
           </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="checkbox">
-                <label>
-                <input type="checkbox">Remember me</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <button type="submit" class="btn btn-info"> Log In</button><br><br>
-                <span>
-                  <a href="#">Need Help?</a>
-                </span>
-              </br></br>
-            </div>
-          </div>
+          
        
         <!-- </fieldset> -->
       </form>

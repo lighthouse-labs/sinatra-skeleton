@@ -1,0 +1,1 @@
+class CreateUsers <::AcitiveRecord::Migration
