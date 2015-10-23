@@ -4,7 +4,10 @@ helpers do
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
+end
 
+before do
+  redirect '/login' if !current_user && request.path != '/login' && request.path != '/signup'
 end
 
 # Homepage (Root path)
@@ -49,10 +52,15 @@ get '/movies/new' do
   erb :new_movie
 end
 
+get '/profile/edit' do
+  current_user
+  erb  :profile
+end
+
 post '/login' do
-  username = params[:username]
+  email = params[:email]
   password = params[:password]
-  user = User.find_by(username: username)
+  user = User.find_by(email: email)
   if user.password == password
     session[:user_id] = user.id
     redirect '/'
@@ -73,7 +81,7 @@ post '/signup' do
   user = User.find_by(email: params[:email])
   if user
     session[:user_id] = user.id
-    redirect '/login'
+    redirect '/'
   else
     user = User.create(user_params)
     if user
@@ -98,5 +106,16 @@ post '/movies/new' do
 
   new_movie = current_user.movies.create( title: title, year_released: year_released, parent_rating: parent_rating, studio: studio, poster_url: poster_url)
 
-  redirect "/"
+  redirect '/'
+end
+
+post '/profile/edit' do
+  first_name = params[:first_name]
+  last_name = params[:last_name]
+  username = params[:username]
+  email = params[:email]
+  password = params[:password]
+
+  current_user.update first_name: first_name, last_name: last_name, username: username, email: email, password: password
+  redirect '/'
 end

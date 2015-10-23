@@ -9,19 +9,23 @@
   <div>
     <label>Image</label>
     <input type="text" name="poster_url" />
+    <textarea class="form-control" rows="3" name="review" placeholder="Write a review here"></textarea>
   </div>
   <button type="submit">Submit</button>
 </form>
 
 <ul>
-<% @movies.each do |movie| %>
-  <a href="/movies/<%= movie.id %>">
-    <li class="movie-container">
+<% @movies.each_slice(3) do |slice| %>
+  <div class="row">
+  <% slice.each do |movie|%>
+    <div class="col-md-4 movie">
+      <a href="/movies/<%= movie.id %>"><img src="<%= movie.poster_url %>">
       <h5><%= movie.title %></h5>
       <p><%= movie.year_released %></p>
       <a href="/movies/delete/<%= movie.id %>"><button> delete <%= movie.title %></button></a>
-    </li>
-  </a>
+    </div>
+  <% end %>
+  </div>
 <% end %>
 </ul>
 
