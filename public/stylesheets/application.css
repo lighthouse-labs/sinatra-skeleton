@@ -1,0 +1,39 @@
+/* styling the singup and login forms */
+
+input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+form {
+  border-style: solid;
+  max-width: 500px;
+  margin: 0px auto;
+  padding: 10px;
+}
+
+#remember_me {
+  display: inline;
+  width: 10px;
+
+}
+
+form {
+
+  border-radius: 10px;
+  color: #A9A9A9;
+
+}
+
+
+h3 {
+
+  color: 000000;
+
+}
+
+
+}
+
+
