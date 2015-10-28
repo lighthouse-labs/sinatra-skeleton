@@ -8,7 +8,7 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-activerecord'
 
-gem 'puma'
+# gem 'puma'
 gem 'tux'
 
 group :development, :test do

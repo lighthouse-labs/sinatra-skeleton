@@ -1,1 +1,31 @@
+<h1><%= current_user.username %></h1>
 <h1>Home Page</h1>
+
+<form action="/movies/new" method="POST">
+  <div>
+    <label>Title</label>
+    <input type="text" name="title"/>
+  </div>
+  <div>
+    <label>Image</label>
+    <input type="text" name="poster_url" />
+    <textarea class="form-control" rows="3" name="review" placeholder="Write a review here"></textarea>
+  </div>
+  <button type="submit">Submit</button>
+</form>
+
+<ul>
+<% @movies.each_slice(3) do |slice| %>
+  <div class="row">
+  <% slice.each do |movie|%>
+    <div class="col-md-4 movie">
+      <a href="/movies/<%= movie.id %>"><img src="<%= movie.poster_url %>">
+      <h5><%= movie.title %></h5>
+      <p><%= movie.year_released %></p>
+      <a href="/movies/delete/<%= movie.id %>"><button> delete <%= movie.title %></button></a>
+    </div>
+  <% end %>
+  </div>
+<% end %>
+</ul>
+
