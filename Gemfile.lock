@@ -70,6 +70,7 @@ GEM
       sinatra (>= 1.2.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    validates_phone_number (2.0.1)
 
 PLATFORMS
   ruby
@@ -85,3 +86,7 @@ DEPENDENCIES
   sinatra-contrib
   sqlite3
   tux
+  validates_phone_number
+
+BUNDLED WITH
+   1.10.6

@@ -10,6 +10,7 @@ gem 'sinatra-activerecord'
 
 gem 'puma'
 gem 'tux'
+gem 'validates_phone_number'
 
 group :development, :test do
   gem 'pry'
