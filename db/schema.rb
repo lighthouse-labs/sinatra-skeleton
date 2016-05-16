@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321144528) do
+ActiveRecord::Schema.define(version: 20160516195607) do
 
-  create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
+  create_table "albums", force: :cascade do |t|
+    t.string "title"
+    t.string "record_label"
+    t.date   "release_date"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string  "name"
+    t.string  "artist"
+    t.integer "likes"
+    t.integer "album_id"
   end
 
 end
