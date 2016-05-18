@@ -23,3 +23,9 @@ group :production do
   # use postgres in production, or move outside a group if your app uses postgres for development and production 
   gem 'pg'
 end
+
+group :test do
+  gem 'rspec'
+  gem 'capybara'
+  gem 'database_cleaner'
+end
