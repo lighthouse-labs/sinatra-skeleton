@@ -5,10 +5,10 @@ end
 
 get '/songs' do
   @songs = Song.all
-  erb :songs
+  erb :'songs/index'
 end
 
 get '/albums' do
   @albums = Album.all
-  erb :albums
+  erb :'albums/index'
 end
