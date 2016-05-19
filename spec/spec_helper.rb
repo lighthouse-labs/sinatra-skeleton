@@ -5,6 +5,7 @@ require_relative '../config/environment'
 require 'rspec'
 require 'capybara/rspec'
 require 'database_cleaner'
+require 'faker'
 
 Capybara.app = Sinatra::Application
 

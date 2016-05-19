@@ -1,0 +1,18 @@
+<h1>
+  New Album
+</h1>
+
+<% if @album.errors.any? %>
+  <ul class="errors">
+    <% @album.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/albums" method="post">
+  <input name="title" value="<%= @album.title %>">
+  <input name="record_label" value="<%= @album.record_label %>">
+  <input type="date" name="release_date" value="<%= @album.release_date %>">
+  <input type="submit" value="Create">
+</form>
