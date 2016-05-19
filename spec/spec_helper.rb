@@ -11,6 +11,7 @@ Capybara.app = Sinatra::Application
 RSpec.configure do |config|
   # make the capybara methods available in our tests
   config.include Capybara::DSL
+  config.include Capybara::RSpecMatchers
 
   # All of the following just ensures the database is wiped
   # before every single test
