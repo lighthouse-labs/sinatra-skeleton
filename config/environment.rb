@@ -9,7 +9,6 @@ require 'sinatra/activerecord'
 require 'sinatra/contrib/all' # Requires cookies, among other things
 
 
-
 ENV['RACK_ENV'] ||= 'development'
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 APP_NAME = APP_ROOT.basename.to_s
@@ -31,6 +30,10 @@ configure :development, :test do
   require 'pry'
 end
 
+# Production Sinatra Configuration
+configure :production do
+  # NOOP
+end
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')

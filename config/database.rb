@@ -17,6 +17,7 @@ configure do
     }
   # Production database settings, tuned for heroku
   when :production
+    # Configure from a DATABASE_URL environment variable
     db = URI.parse(ENV['DATABASE_URL'])  # standard heroku environment variable for configuring the database
 
     set :database, {
