@@ -20,6 +20,6 @@ end
 
 # bundle install --without test --without development
 group :production do
-  # uncomment to use postgres in production, or move outside a group if your app uses postgres for development and production 
-  # gem 'pg'
+  # use postgres in production, or move outside a group if your app uses postgres for development and production 
+  gem 'pg'
 end
