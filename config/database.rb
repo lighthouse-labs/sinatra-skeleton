@@ -11,16 +11,10 @@ configure :development, :test do
 end
 
 configure :production do
-  db = URI.parse(ENV['DATABASE_URL'])  # standard heroku environment variable for configuring the database
-
-  set :database, {
-    :adapter => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
-    :host     => db.host,
-    :username => db.user,
-    :password => db.password,
-    :database => db.path[1..-1],
-    :encoding => 'utf8'
-  }
+  # Database connection is configured automatically based on the DATABASE_URL
+  # environment variable. This is a feature of sinatra/activerecord support.
+  #
+  # If you're deploying to Heroku this will be set automatically.
 end
 
 configure do
