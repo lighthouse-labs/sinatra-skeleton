@@ -1,8 +1,13 @@
-require 'rake'
 require "sinatra/activerecord/rake"
-require ::File.expand_path('../config/environment', __FILE__)
 
-desc 'Retrieves the current schema version number'
-task "db:version" do
-  puts "Current version: #{ActiveRecord::Migrator.current_version}"
+namespace :db do
+  task :load_config do
+    require ::File.expand_path('../config/environment', __FILE__)
+  end
+
+  desc 'Retrieves the current schema version number'
+  task :version do
+    puts "Current version: #{ActiveRecord::Migrator.current_version}"
+  end
 end
+
