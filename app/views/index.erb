@@ -1,1 +1,18 @@
 <h1>Home Page</h1>
+
+<% if logged_in? %>
+    <h2> Welcome <%= user.username %>! </h2>
+    <a href="/posts">Posts</a>
+    <a href="/posts/new">New Post</a>
+    <form action='/logout' method="get">
+        <input name="submit" type="submit" value="Log Out"/>
+    </form>
+<% else %>
+
+<%= erb(:"forms/login_form") %>
+
+<br/>
+
+<a href="/signup">Sign Up</a>
+
+<% end %>

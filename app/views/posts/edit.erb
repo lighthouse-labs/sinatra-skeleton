@@ -1,0 +1,8 @@
+<form action='/posts/<%= @edit_post.id %>/edit/' method="post">
+
+<label for="post">Post</label>
+<input name="post" type="text" placeholder="Type you post here" value="<%= @edit_post.value %>"/>
+
+<input name="submit" type="submit" value="Submit"/>
+
+</form>

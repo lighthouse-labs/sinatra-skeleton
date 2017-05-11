@@ -1,0 +1,17 @@
+.latest-post{
+    width:10%;
+}
+
+@media (min-width: 600px){
+
+    .latest-post{
+
+    }
+}
+
+@media (max-width: 600px){
+
+    .latest-post{
+
+    }
+}
